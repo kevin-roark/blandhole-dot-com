@@ -8,7 +8,7 @@ function encode(data) {
     .join('&')
 }
 
-export default class Index extends React.Component {
+export default class ContactIndex extends React.Component {
   constructor(props) {
     super(props)
     this.state = { isValidated: false }
@@ -50,12 +50,14 @@ export default class Index extends React.Component {
               >
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                 <input type="hidden" name="form-name" value="contact" />
+
                 <div hidden>
                   <label>
                     Don’t fill this out:{' '}
                     <input name="bot-field" onChange={this.handleChange} />
                   </label>
                 </div>
+
                 <div className="field">
                   <label className="label" htmlFor={'name'}>
                     Your name
@@ -71,6 +73,7 @@ export default class Index extends React.Component {
                     />
                   </div>
                 </div>
+
                 <div className="field">
                   <label className="label" htmlFor={'email'}>
                     Email
@@ -86,6 +89,7 @@ export default class Index extends React.Component {
                     />
                   </div>
                 </div>
+
                 <div className="field">
                   <label className="label" htmlFor={'message'}>
                     Message
@@ -100,6 +104,7 @@ export default class Index extends React.Component {
                     />
                   </div>
                 </div>
+
                 <div className="field">
                   <button className="button is-link" type="submit">
                     Send
