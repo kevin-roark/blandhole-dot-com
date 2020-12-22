@@ -7,6 +7,7 @@ const ContentItemPreview = ({ entry, widgetFor }) => {
     <ContentItemTemplate
       data={{
         html: widgetFor('body'),
+        fields: { slug: '' },
         frontmatter: data,
       }}
     />
