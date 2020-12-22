@@ -1,6 +1,7 @@
 import React from 'react'
 import { navigate } from 'gatsby-link'
 import Layout from '../../components/Layout'
+import PageTitle from '../../components/PageTitle'
 
 function encode(data) {
   return Object.keys(data)
@@ -36,10 +37,11 @@ export default class ContactIndex extends React.Component {
   render() {
     return (
       <Layout>
+        <PageTitle title="Contact" />
+
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1>Contact</h1>
               <form
                 name="contact"
                 method="post"

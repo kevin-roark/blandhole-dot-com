@@ -49,7 +49,7 @@ const Navbar = class extends React.Component {
               <img
                 src={'/img/logo.png'}
                 alt="Blandhole Dot Com"
-                style={{ width: '88px' }}
+                style={{ width: 132, maxHeight: 80 }}
               />
             </Link>
 
@@ -71,7 +71,7 @@ const Navbar = class extends React.Component {
           >
             <div className="navbar-start has-text-centered">
               {navItems.map(({ to, label }) => (
-                <Link key={label} className="navbar-item" to={to}>{label}</Link>
+                <Link key={label} className="navbar-item navbar-item-text" to={to}>{label}</Link>
               ))}
             </div>
           </div>

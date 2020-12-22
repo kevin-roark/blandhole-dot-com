@@ -1,21 +1,13 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
-import { ContentItemBlobLink } from './ContentItem'
+import ContentList from './ContentList'
 
 class ContentRoll extends React.Component {
   render() {
     const { data } = this.props
     const edges = data.allMarkdownRemark.edges || []
 
-    return (
-      <div className="columns is-multiline">
-        {edges.map(({ node }) => (
-          <div className="is-parent column is-4" key={node.id}>
-            <ContentItemBlobLink className="blog-list-item tile is-child box notification" data={node} />
-          </div>
-        ))}
-      </div>
-    )
+    return <ContentList items={edges.map(e => e.node)} />
   }
 }
 
@@ -24,6 +16,7 @@ export default () => (
     query={graphql`
       query ContentRollQuery {
         allMarkdownRemark(
+          limit: 20
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: { frontmatter: { templateKey: { eq: "content-item" } } }
         ) {
