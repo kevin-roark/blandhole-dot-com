@@ -5,8 +5,11 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 
 export const getTagColor = (tag) => randomColor()
 
-export const formatTag = (tag, plural = true) =>
-  words(tag).map(capitalize).join(' ') + (plural ? 's' : '')
+export const formatTag = (tag, plural = true) => {
+  const f = words(tag).map(capitalize).join(' ')
+  const lc = f.charAt(f.length - 1)
+  return plural && lc !== 's' && lc !== 'y' ? f + 's' : f
+}
 
 class BlobbyTagLinkItem extends React.Component {
   state = { color: randomColor(this.props.tag), pos: this.getPosition() }

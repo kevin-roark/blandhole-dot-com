@@ -14,7 +14,7 @@ class TagRoute extends React.Component {
 
     return (
       <Layout>
-        <Helmet title={`${tag} | ${title}`} />
+        <Helmet title={`${formatTag(tag, true)} | ${title}`} />
 
         <PageTitle
           title={`${totalCount} ${formatTag(tag, false)} Content Item${totalCount > 1 ? 's' : ''}`}
@@ -27,7 +27,7 @@ class TagRoute extends React.Component {
 
             <div className="flex" style={{ justifyContent: 'center', marginTop: 200 }}>
               <h2 className="shadow3 pad25" style={{ backgroundColor: '#fff', fontSize: '3em' }}>
-                <Link to="/tags/" style={{ textDecoration: 'none' }}>
+                <Link to="/tags/" style={{ textDecoration: 'none', color: '#00f' }}>
                   Browse all tags
                 </Link>
               </h2>

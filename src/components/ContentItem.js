@@ -4,31 +4,37 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 import ContentTags from './ContentTags'
 
 const ContentItemHeader = ({ data }) => {
-  const { title, featuredimage, date } = data.frontmatter
+  const { title, featuredimage, featuredvideo, date } = data.frontmatter
   return (
     <header>
-      {featuredimage ? (
-        <div className="featured-thumbnail">
-          <PreviewCompatibleImage
-            imageInfo={{
-              image: featuredimage,
-              alt: `featured image for ${title}`,
-            }}
-          />
-        </div>
-      ) : null}
-
       <div className="post-meta">
         <Link
-          className="title has-text-primary is-size-4 is-block"
+          className="title is-block"
           to={data.fields.slug}
         >
           {title}
         </Link>
-        <span className="subtitle is-size-5 is-block">
+        <span className="date subtitle is-block">
           <div>{date}</div>
         </span>
       </div>
+
+      {featuredimage || featuredvideo ? (
+        <div className="featured-thumbnail">
+          {featuredvideo ? (
+            <video
+              src={featuredvideo}
+            />
+          ) : (
+            <PreviewCompatibleImage
+              imageInfo={{
+                image: featuredimage,
+                alt: `featured image for ${title}`,
+              }}
+            />
+          )}
+        </div>
+      ) : null}
     </header>
   )
 }
@@ -67,6 +73,8 @@ export const query = graphql`
       date(formatString: "MM/DD/YYYY")
       description
       featuredimage
+      featuredvideo
+      galleryImages
       tags
     }
   }
