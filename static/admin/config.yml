@@ -44,7 +44,7 @@ collections:
         field: {label: Video, name: video, widget: file, allow_multiple: false }
         required: false
       - {label: "Body", name: "body", widget: "markdown", required: false}
-      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Tags", name: "tags", widget: "list"}
 
   - name: "pages"
     label: "Pages"
