@@ -10,7 +10,6 @@ galleryImages: []
 galleryVideos: []
 tags:
   - video
-  - music-video
   - gift
 ---
 
