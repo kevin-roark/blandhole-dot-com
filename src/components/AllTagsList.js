@@ -1,6 +1,6 @@
 import React from 'react'
 import { kebabCase, capitalize, words } from 'lodash'
-import randomColor from 'randomColor'
+import randomColor from 'randomcolor'
 import { Link, graphql, StaticQuery } from 'gatsby'
 
 export const getTagColor = (tag) => randomColor()
@@ -11,12 +11,11 @@ export const formatTag = (tag, plural = true) =>
 class BlobbyTagLinkItem extends React.Component {
   state = { color: randomColor(this.props.tag), pos: this.getPosition() }
   mounted = false
-  parentWidth = 0
 
   getPosition() {
     const size = 200
-    const maxWidth = window.innerWidth
-    const maxHeight = window.innerHeight
+    const maxWidth = typeof window !== 'undefined' ? window.innerWidth : 1000
+    const maxHeight = typeof window !== 'undefined' ? window.innerHeight : 1000
 
     return {
       x: Math.floor(Math.random() * (maxWidth - size)),
@@ -41,8 +40,7 @@ class BlobbyTagLinkItem extends React.Component {
   }
 
   render() {
-    const { tag, parentWidth } = this.props
-    this.parentWidth = parentWidth
+    const { tag } = this.props
     const { color, pos } = this.state
 
     return (
@@ -57,7 +55,7 @@ class BlobbyTagLinkItem extends React.Component {
           to={`/tags/${kebabCase(tag)}/`}
           className="all-tags-list-link"
         >
-          {formatTag(tag)}
+          <span>{formatTag(tag)}</span>
         </Link>
     </li>
     )

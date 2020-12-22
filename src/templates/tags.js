@@ -18,7 +18,7 @@ class TagRoute extends React.Component {
 
         <PageTitle
           title={`${totalCount} ${formatTag(tag, false)} Content Item${totalCount > 1 ? 's' : ''}`}
-          style={{ backgroundColor: getTagColor(tag), color: '#333' }}
+          style={{ backgroundColor: getTagColor(tag), color: '#aaa' }}
         />
 
         <section className="section">
