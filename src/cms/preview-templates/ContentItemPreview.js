@@ -8,7 +8,10 @@ const ContentItemPreview = ({ entry, widgetFor }) => {
       data={{
         html: widgetFor('body'),
         fields: { slug: '' },
-        frontmatter: data,
+        frontmatter: {
+          ...data,
+          date: String(data.date),
+        },
       }}
     />
   )
