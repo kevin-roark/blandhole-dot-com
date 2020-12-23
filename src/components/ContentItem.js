@@ -55,10 +55,10 @@ const ContentItemHeader = ({ data, isPreview }) => {
 }
 
 const ContentItemMediaGallery = ({ data }) => {
-  const { galleryImages = [], galleryVideos = [] } = data.frontmatter
+  const { galleryImages, galleryVideos } = data.frontmatter
   const items = [
-    ...galleryImages.map(src => ({ type: 'image', src })),
-    ...galleryVideos.map(src => ({ type: 'video', src })),
+    ...(galleryImages || []).map(src => ({ type: 'image', src })),
+    ...(galleryVideos || []).map(src => ({ type: 'video', src })),
   ]
   return items.length === 0 ? null : (
     <div className="columns is-multiline content-item-media-gallery">
