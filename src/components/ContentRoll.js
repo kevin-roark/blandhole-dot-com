@@ -16,7 +16,7 @@ export default () => (
     query={graphql`
       query ContentRollQuery {
         allMarkdownRemark(
-          limit: 20
+          limit: 50
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: { frontmatter: { templateKey: { eq: "content-item" } } }
         ) {

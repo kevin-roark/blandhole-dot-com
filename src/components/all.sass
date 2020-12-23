@@ -12,19 +12,6 @@ $black: #000
 ::selection
   background-color: #ff0
 
-.layout-content
-  padding: 20px 60px
-  box-sizing: border-box
-  min-height: 100vh
-  background-image: url('/img/background-image.jpg')
-  background-size: cover
-
-.navbar
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
-
-  .navbar-menu
-    box-shadow:none !important
-
 .shadow1
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12)
 
@@ -40,18 +27,6 @@ $black: #000
 .flex
   display: flex
 
-.page-header
-  padding: 0.25em
-  line-height: 1
-  background-color: #fff
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
-
-  span
-    display: block
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)
-    transform-origin: 0 0
-    transform: translate(0, -40px) skew(-35deg, 7deg) scale(1.2, 1.8)
-
 .black-bg
   background-color: #000
   color: #fff
@@ -59,47 +34,19 @@ $black: #000
 .pad25
   padding: 0.25em
 
-@keyframes rotation
-  0%
-    transform: rotate(0deg)
-  100%
-    transform: rotate(360deg)
 
-.all-tags-list
-  position: fixed
-  top: 0; left: 0
-  width: 100vw; height: 100vh
-  list-style: none
-  margin: 0
-  z-index: 10
-  user-select: none
+.layout-content
+  padding: 20px 60px
+  box-sizing: border-box
+  min-height: 100vh
+  background-image: url('/img/background-image.jpg')
+  background-size: cover
 
-  li
-    position: absolute
-    width: 200px; height: 200px
-    padding: 4px
-    border-radius: 20px
-    transition: top 5s, left 5s, color 0.3s, background-color 0.3s
-    color: #fff
-    font-weight: 700
-    font-size: 2em
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)
-    text-align: center
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
-    animation: rotation 2s infinite linear
 
-    &:hover, &:active
-      background-color: #fff !important
-      color: #000
-
-.all-tags-list-link
-  width: 100%; height: 100%
-  display: flex; justify-content: center; align-items: center
-  color: inherit !important
-  text-decoration: none
-  span
-    transform: scale(1.2, 4)
-    line-height: 0.7
+.navbar
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  .navbar-menu
+    box-shadow:none !important
 
 .navbar-item
   transition: all 0.3s
@@ -117,56 +64,122 @@ $black: #000
     text-shadow: 0 1px 2px rgba(0, 0, 0, 1)
     background-color: #fff
 
+
+.page-header
+  padding: 0.25em
+  line-height: 1
+  background-color: #fff
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  span
+    display: block
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)
+    transform-origin: 0 0
+    transform: translate(0, -40px) skew(-35deg, 7deg) scale(1.2, 1.8)
+
+
+@keyframes rotation
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+.all-tags-list
+  position: fixed
+  top: 0; left: 0
+  width: 100vw; height: 100vh
+  list-style: none
+  margin: 0
+  z-index: 10
+  user-select: none
+  li
+    position: absolute
+    width: 200px; height: 200px
+    padding: 4px
+    border-radius: 20px
+    transition: top 5s, left 5s, color 0.3s, background-color 0.3s
+    color: #fff
+    font-weight: 700
+    font-size: 2em
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)
+    text-align: center
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+    animation: rotation 2s infinite linear
+    &:hover, &:active
+      background-color: #fff !important
+      color: #000
+
+.all-tags-list-link
+  width: 100%; height: 100%
+  display: flex; justify-content: center; align-items: center
+  color: inherit !important
+  text-decoration: none
+  span
+    transform: scale(1.2, 4)
+    line-height: 0.7
+
+
 footer.footer
   padding: 1rem 0rem 1rem 0rem
   background-color: #f8f8f8
   width: 100vw
-
   .navbar-item
     transform-origin: 0 100%
 
-//Menu overrides
-$menu-item-color: $white-ter
-$menu-item-hover-color: $black !important
-$menu-item-hover-background-color: $black
-$menu-item-active-color: $blandhole-blue-invert
-$menu-item-active-background-color:	$blandhole-blue-invert
-$menu-list-border-left: 1px solid $blandhole-blue-invert
-$menu-label-color: $white-ter
 
-
-.menu-label
-  font-size: 1em !important
-  text-align: left
-.menu-list
-  list-style: none !important
-  text-align: left
-
-
-.content-item-blob-link
+.content-item, .content-item-blob-link
   display: block
   position: relative
-  padding: 1rem 1.5rem 0.25rem 1.5rem
   border-radius: 8px
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)
   background-color: #fff
-  color: #111
-  header
-    .title
-      font-size: 1.3rem
-      text-decoration: none
-      transition: all 0.3s
-      &:hover, &:active
-        color: #f00 !important
-        transform: scaleX(1.5)
-    .date
-      font-size: 1.1rem
-      margin-bottom: 0.25rem
 
-.featured-thumbnail
+.content-item
+  padding: 1.5rem
+
+.content-item-header
+  .title
+    transition: all 0.3s
+    font-size: 1.5rem
+  .date
+    font-size: 1rem
+    margin-bottom: 0.25rem
+  .content-item-description
+    color: #444
+    line-height: 1
+  &.content-preview .title
+    font-size: 1.2rem
+  &.content-preview .date
+    font-size: 0.9rem
+  &.content-preview .content-item-description
+    font-size: 0.85rem
+
+.featured-media
+  text-align: center
   img, video
     max-width: 100%
+    max-height: 75vh
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+
+.content-item-media-gallery.columns
+  margin-top: 0.75rem
+
+.content-item-body
+  margin-top: 1rem
+
+.content-item-blob-link
+  padding: 1rem 1.5rem 0.25rem 1.5rem
+  color: #111
+  text-decoration: none
+  transition: all 0.3s
+  a
+    text-decoration: none
+  &:hover, &:active
+    background-color: #ccc
+    transform: rotateY(20deg)
+    .content-item-header .title
+      color: #f00 !important
+      transform: scaleX(1.5)
+
 
 .content .taglist
   list-style: none
@@ -193,11 +206,8 @@ $menu-label-color: $white-ter
 
 // responsiveness
 +tablet-only
-  .blog-list-item .featured-thumbnail
-    flex-basis: 50%;
 
 +mobile
-  .blog-list-item .featured-thumbnail
-    text-align: center;
-    max-width: 70%;
-    margin: 0 0 1em;
+  .featured-media
+    img, video
+      max-height: 100vh

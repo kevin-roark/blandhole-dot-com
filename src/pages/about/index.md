@@ -4,4 +4,4 @@ path: /about
 title: About Blandhole
 ---
 ### More than a relationship
-It's a website. An archive. a Brand.
+It's a website, archive, brand, and passive-income generating business.
