@@ -4,6 +4,11 @@ import { isMobile } from 'react-device-detect'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import ContentTags from './ContentTags'
 
+const getVideoPoster = (src, offset = 5) => src
+  .replace('upload/v1', `upload/so_${offset}/v1`) // non-transformed videos
+  .replace('/v1', `,so_${offset}/v1`) // transformed videos
+  .replace('.mp4', '.jpg')
+
 const ContentItemHeader = ({ data, isPreview }) => {
   const videoRef = useRef(null)
 
@@ -36,6 +41,7 @@ const ContentItemHeader = ({ data, isPreview }) => {
             <video
               ref={videoRef}
               src={featuredvideo}
+              poster={getVideoPoster(featuredvideo)}
               controls={!isPreview}
               muted={isPreview}
               loop={true}
@@ -74,6 +80,7 @@ const ContentItemMediaGallery = ({ data }) => {
           ) : (
             <video
               src={src}
+              poster={getVideoPoster(src)}
               controls={true}
             />
           )}

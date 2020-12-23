@@ -35,6 +35,15 @@ $black: #000
   padding: 0.25em
 
 
+@mixin hoverStyles()
+  @media (hover: hover)
+    &:hover
+      @content
+
+  @media (hover: none)
+    &:active
+      @content
+
 .layout-content
   padding: 20px 60px
   box-sizing: border-box
@@ -44,7 +53,7 @@ $black: #000
 
 
 .navbar
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  @extend .shadow3
   .navbar-menu
     box-shadow:none !important
 
@@ -54,22 +63,21 @@ $black: #000
   text-decoration: none
   font-weight: 500
   transform-origin: 0 0
-  &:hover, &:active
+  @include hoverStyles
     filter: invert(100%)
     transform: scale(1.5, 4)
     z-index: 5
 
 .navbar-item-text
-  &:hover, &:active
+  @include hoverStyles
     text-shadow: 0 1px 2px rgba(0, 0, 0, 1)
     background-color: #fff
 
 
 .page-header
-  padding: 0.25em
+  @extend .shadow3, .pad25
   line-height: 1
   background-color: #fff
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
   max-width: 800px
   span
     display: block
@@ -93,6 +101,7 @@ $black: #000
   z-index: 10
   user-select: none
   li
+    @extend .shadow3
     position: absolute
     width: 200px; height: 200px
     padding: 4px
@@ -103,11 +112,10 @@ $black: #000
     font-size: 2em
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)
     text-align: center
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
     animation: rotation-cw 2s infinite linear
     &.ccw
       animation-direction: reverse
-    &:hover, &:active
+    @include hoverStyles
       background-color: #fff !important
       color: #000
 
@@ -130,10 +138,10 @@ footer.footer
 
 
 .content-item, .content-item-blob-link
+  @extend .shadow4
   display: block
   position: relative
   border-radius: 8px
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)
   background-color: #fff
 
 .content-item
@@ -159,9 +167,9 @@ footer.footer
 .featured-media
   text-align: center
   img, video
+    @extend .shadow3
     max-width: 100%
     max-height: 75vh
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
 
 .content-item-media-gallery.columns
   margin-top: 0.75rem
@@ -176,8 +184,8 @@ footer.footer
   transition: all 0.3s
   a
     text-decoration: none
-  &:hover, &:active
-    background-color: #ccc
+  @include hoverStyles
+    background-color: #ffff79
     transform: rotateY(20deg)
     .content-item-header .title
       color: #f00 !important
@@ -199,7 +207,7 @@ footer.footer
   text-decoration: none
   color: #555
   transition: all 0.2s
-  &:hover, &:active
+  @include hoverStyles
     transform: rotate(180deg) scale(2)
     color: $blandhole-blue
 

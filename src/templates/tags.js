@@ -56,6 +56,7 @@ export const tagPageQuery = graphql`
       totalCount
       edges {
         node {
+          id
           fields {
             slug
           }
