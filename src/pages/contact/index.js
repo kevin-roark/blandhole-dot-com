@@ -40,8 +40,8 @@ export default class ContactIndex extends React.Component {
         <PageTitle title="Contact" />
 
         <section className="section">
-          <div className="container">
-            <div className="content">
+          <div className="container content">
+            <div className="content-item">
               <form
                 name="contact"
                 method="post"

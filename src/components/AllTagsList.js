@@ -43,7 +43,7 @@ class BlobbyTagLinkItem extends React.Component {
   }
 
   render() {
-    const { tag } = this.props
+    const { tag, idx } = this.props
     const { color, pos } = this.state
 
     return (
@@ -53,6 +53,7 @@ class BlobbyTagLinkItem extends React.Component {
           left: pos.x,
           top: pos.y,
         }}
+        className={`${idx % 2 === 1 ? 'ccw' : ''}`}
       >
         <Link
           to={`/tags/${kebabCase(tag)}/`}
@@ -69,9 +70,10 @@ const AllTagsList = ({ data }) => {
   const { group } = data.allMarkdownRemark
   return (
     <ul className="all-tags-list">
-      {group.map((tag) => (
+      {group.map((tag, idx) => (
         <BlobbyTagLinkItem
           key={tag.fieldValue}
+          idx={idx}
           tag={tag.fieldValue}
         />
       ))}

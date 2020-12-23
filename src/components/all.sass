@@ -28,7 +28,7 @@ $black: #000
   display: flex
 
 .black-bg
-  background-color: #000
+  background-color: #000 !important
   color: #fff
 
 .pad25
@@ -70,14 +70,15 @@ $black: #000
   line-height: 1
   background-color: #fff
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  max-width: 800px
   span
     display: block
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)
     transform-origin: 0 0
-    transform: translate(0, -40px) skew(-35deg, 7deg) scale(1.2, 1.8)
+    transform: translate(20px, -40px) skew(-35deg, 7deg) scale(1.2, 1.8)
 
 
-@keyframes rotation
+@keyframes rotation-cw
   0%
     transform: rotate(0deg)
   100%
@@ -103,7 +104,9 @@ $black: #000
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)
     text-align: center
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
-    animation: rotation 2s infinite linear
+    animation: rotation-cw 2s infinite linear
+    &.ccw
+      animation-direction: reverse
     &:hover, &:active
       background-color: #fff !important
       color: #000
